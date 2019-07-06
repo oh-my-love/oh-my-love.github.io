@@ -71,6 +71,7 @@
       position:fixed;
       background-size: cover;
       background-position: center;
+      background: #000;
       /*background-image:url(./images/heart.jpg);*/
       z-index:2019;
     }
@@ -90,7 +91,7 @@
   <div id="typed-wrap">
     <span id="typed"></span>
   </div>
-  <audio id="song" src="./audio/marry.mp3" autoplay="true" loop="true"></audio>
+  <audio id="song" src="./audio/marry.mp3" loop="true"></audio>
   <!-- Swiper -->
   <div class="swiper-container gallery-top">
     <div class="swiper-wrapper">
@@ -203,20 +204,20 @@
     
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
-      var song = document.getElementById('song');
       var heart = new Image();
       heart.onload = function(){
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
 	  var typed = new Typed('#typed', {
-        	strings: ['田奇 ❤ 李谊成\n❤^500❤^500❤^500^500❤^500❤^500❤'],
+        	strings: ['田奇 ❤ 李谊成\n❤^500❤^500❤^500❤^500❤^500❤^500❤'],
 		typeSpeed:150,
 		startDelay:200,
 		onComplete:function(that){
-	  		song && song.play();
+			var song = document.getElementById('song');
+	  		song.play();
 	  		Velocity(document.getElementById("typed-wrap"),"zoomOut");
 	  		that.destroy();
 	  		document.addEventListener("WeixinJSBridgeReady", function () {
-            			song && song.play();
+            		  song.play();
           		}, false);
 	        }
       	  });
