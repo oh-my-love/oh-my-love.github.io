@@ -65,10 +65,30 @@
     .gallery-thumbs .swiper-slide-thumb-active {
       opacity: 1;
     }
-
+    #typed-wrap{
+      height:100%;
+      width:100%;
+      position:fixed;
+      background-size: cover;
+      background-position: center;
+      background-image:url(heart.jpg)
+    }
+    #typed{
+      white-space: pre;
+      line-height: 50px;
+      color:red;
+      font-size:28px;
+      position:absolute;
+      top:50%;
+      left:30%;
+    }
   </style>
 </head>
 <body>
+  <!-- welcome -->
+  <div id="typed-wrap">
+    <span id="typed"></span>
+  </div>
   <audio id="song" src="./audio/R-J.mp3" autoplay="true" loop="true"></audio>
   <!-- Swiper -->
   <div class="swiper-container gallery-top">
@@ -145,7 +165,9 @@
 
   <!-- Swiper JS -->
   <script src="./swiper/js/swiper.min.js"></script>
-
+  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.min.js"></script>
+  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.ui.min.js"></script>
   <!-- Initialize Swiper -->
   <script>
     var thumbs = new Swiper('.gallery-thumbs', {
@@ -175,6 +197,15 @@
          thumbs: {
            swiper: thumbs,
          }
+    });
+    var typed = new Typed('#typed', {
+	strings: ['田奇 ❤ 李谊成\n❤^500❤^500❤^500^500❤^500❤^500❤'],
+	typeSpeed:150,
+	startDelay:200,
+	onComplete:function(that){
+	  Velocity(document.getElementById("typed-wrap"),"zoomOut");
+	  that.destroy();
+	}
     });
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
