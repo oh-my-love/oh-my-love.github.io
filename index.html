@@ -71,7 +71,7 @@
       position:fixed;
       background-size: cover;
       background-position: center;
-      background-image:url(./images/heart.jpg);
+      /*background-image:url(./images/heart.jpg);*/
       z-index:2019;
     }
     #typed{
@@ -204,19 +204,24 @@
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
       var song = document.getElementById('song');
-      var typed = new Typed('#typed', {
-        strings: ['田奇 ❤ 李谊成\n❤^500❤^500❤^500^500❤^500❤^500❤'],
-	typeSpeed:150,
-	startDelay:200,
-	onComplete:function(that){
-	  song && song.play();
-	  Velocity(document.getElementById("typed-wrap"),"zoomOut");
-	  that.destroy();
-	  document.addEventListener("WeixinJSBridgeReady", function () {
-            song && song.play();
-          }, false);
-	}
-      });
+      var heart = new Image();
+      heart.onload = function(){
+          document.getElementById("typed-wrap").style.backgroundImage = "url(./images/heart.jpg)";
+	  var typed = new Typed('#typed', {
+        	strings: ['田奇 ❤ 李谊成\n❤^500❤^500❤^500^500❤^500❤^500❤'],
+		typeSpeed:150,
+		startDelay:200,
+		onComplete:function(that){
+	  		song && song.play();
+	  		Velocity(document.getElementById("typed-wrap"),"zoomOut");
+	  		that.destroy();
+	  		document.addEventListener("WeixinJSBridgeReady", function () {
+            			song && song.play();
+          		}, false);
+	        }
+      	  });
+      }
+      heart.src = "./images/heart.jpg";
     });
   </script>
 </body>
