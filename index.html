@@ -206,7 +206,7 @@
       var song = document.getElementById('song');
       var heart = new Image();
       heart.onload = function(){
-          document.getElementById("typed-wrap").style.backgroundImage = "url(./images/heart.jpg)";
+          document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
 	  var typed = new Typed('#typed', {
         	strings: ['田奇 ❤ 李谊成\n❤^500❤^500❤^500^500❤^500❤^500❤'],
 		typeSpeed:150,
