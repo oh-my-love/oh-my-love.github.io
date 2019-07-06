@@ -5,7 +5,7 @@
   <title>田奇 ❤❤ 李谊成</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+  <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
 
   <!-- Demo styles -->
   <style>
@@ -165,14 +165,14 @@
   </div>
 
   <!-- Swiper JS -->
-  <script src="./swiper/js/swiper.min.js"></script>
+  <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
   <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
   <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.min.js"></script>
   <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.ui.min.js"></script>
   <!-- Initialize Swiper -->
   <script>
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
-    document.addEventListener('DOMContentLoaded', function () {
+    //document.addEventListener('DOMContentLoaded', function () {
       var heart = new Image();
       heart.onload = function(){
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
@@ -192,7 +192,7 @@
       	  });
       }
       heart.src = "./images/heart.jpg";
-    });
+    //});
     //缩略图
     var thumbs = new Swiper('.gallery-thumbs', {
            spaceBetween: 10,
