@@ -173,6 +173,7 @@
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     //document.addEventListener('DOMContentLoaded', function () {
       var heart = new Image();
+      //等待背景加载完成
       heart.onload = function(){
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
 	  var typed = new Typed('#typed', {
@@ -189,39 +190,40 @@
           		}, false);
 	        }
       	  });
+	  //缩略图
+	  var thumbs = new Swiper('.gallery-thumbs', {
+		   spaceBetween: 10,
+		   slidesPerView: 4,
+		   loop: true,
+		   freeMode: true,
+		   loopedSlides: 5, //looped slides should be the same
+		   watchSlidesVisibility: true,
+		   watchSlidesProgress: true,
+		   lazy: true,
+		});
+	  //大图
+	  var swiper = new Swiper('.gallery-top', {
+		 // Enable lazy loading
+		 lazy: true,
+		 <!-- pagination: { -->
+		 <!-- el: '.swiper-pagination', -->
+		 <!-- clickable: true, -->
+		 <!-- }, -->
+		 spaceBetween: 10,
+		 loop:true,
+		 loopedSlides: 5, //looped slides should be the same
+		 navigation: {
+		   nextEl: '.swiper-button-next',
+		   prevEl: '.swiper-button-prev',
+		 },
+		 thumbs: {
+		   swiper: thumbs,
+		 }
+	  });
       }
       heart.src = "./images/heart.jpg";
     //});
-    //缩略图
-    var thumbs = new Swiper('.gallery-thumbs', {
-           spaceBetween: 10,
-           slidesPerView: 4,
-           loop: true,
-           freeMode: true,
-           loopedSlides: 5, //looped slides should be the same
-           watchSlidesVisibility: true,
-           watchSlidesProgress: true,
-	   lazy: true,
-	});
-    //大图
-    var swiper = new Swiper('.gallery-top', {
-         // Enable lazy loading
-         lazy: true,
-         <!-- pagination: { -->
-         <!-- el: '.swiper-pagination', -->
-         <!-- clickable: true, -->
-         <!-- }, -->
-	 spaceBetween: 10,
-         loop:true,
-         loopedSlides: 5, //looped slides should be the same
-         navigation: {
-           nextEl: '.swiper-button-next',
-           prevEl: '.swiper-button-prev',
-         },
-         thumbs: {
-           swiper: thumbs,
-         }
-    });
+    
   </script>
 </body>
 </html>
