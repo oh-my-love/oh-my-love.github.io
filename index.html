@@ -88,7 +88,7 @@
   <div id="typed-wrap">
     <span id="typed"></span>
   </div>
-  <audio id="song" src="http://fs.open.kugou.com/fcd19118cbbbddbfbe0eb7aac19cb8ba/5d214ba6/G073/M04/1F/01/KZQEAFgCHL6ALhP-ACyN4hcVAyw737.mp3" loop="true"></audio>
+  <audio id="song" preload="auto" src="http://fs.open.kugou.com/fcd19118cbbbddbfbe0eb7aac19cb8ba/5d214ba6/G073/M04/1F/01/KZQEAFgCHL6ALhP-ACyN4hcVAyw737.mp3" loop="true"></audio>
   <!-- Swiper -->
   <div class="swiper-container gallery-top">
     <div class="swiper-wrapper">
@@ -169,18 +169,18 @@
       //等待背景加载完成
       heart.onload = function(){
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
+	  var song = document.getElementById('song');
+	  song.play();
+	  document.addEventListener("WeixinJSBridgeReady", function () {
+            song.play();
+          }, false);
 	  var typed = new Typed('#typed', {
         	strings: ['田奇 ❤ 李谊成\n❤^800❤^800❤^800❤^800❤^800❤^800❤'],
 		typeSpeed:150,
 		startDelay:200,
 		onComplete:function(that){
-			var song = document.getElementById('song');
-	  		song.play();
-	  		Velocity(document.getElementById("typed-wrap"),"zoomOut");
-	  		that.destroy();
-	  		document.addEventListener("WeixinJSBridgeReady", function () {
-            		  song.play();
-          		}, false);
+	  	  Velocity(document.getElementById("typed-wrap"),"zoomOut");
+	  	  that.destroy();
 	        }
       	  });
 	  //缩略图
