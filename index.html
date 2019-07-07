@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>田奇 💘囍❤❤囍💘 李谊成</title>
+  <title>田奇 💘❤❤💘 李谊成</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <!-- Link Swiper's CSS -->
   <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
@@ -166,9 +166,12 @@
     var played = false;
     function playSong(){
     	if(!played){
-	  played = true;
-	  var song = document.getElementById('song');
-	  song.play();
+	  try{
+	    document.getElementById('song').play();
+	    played = true;
+	  }catch(e){
+	    console.log(e);
+	  }
 	}
     }
     document.addEventListener("touchstart", function(){
@@ -182,10 +185,9 @@
       var heart = new Image();
       //等待背景加载完成
       heart.onload = function(){
-	  playSong();
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
 	  var typed = new Typed('#typed', {
-        	strings: ['田奇 ❤ 李谊成\n❤^800❤^800❤^800❤^800❤^800❤^800❤'],
+        	strings: ['田奇 💘 李谊成\n💘^800💘^800💘^800💘^800💘^800💘^800💘^800💘'],
 		typeSpeed:150,
 		startDelay:200,
 		onComplete:function(that){
