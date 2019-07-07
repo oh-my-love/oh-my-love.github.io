@@ -91,68 +91,16 @@
   <audio id="song" preload="auto" src="http://fs.open.kugou.com/fcd19118cbbbddbfbe0eb7aac19cb8ba/5d214ba6/G073/M04/1F/01/KZQEAFgCHL6ALhP-ACyN4hcVAyw737.mp3" loop="true"></audio>
   <!-- Swiper -->
   <div class="swiper-container gallery-top">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <!-- Required swiper-lazy class and image source specified in data-src attribute -->
-        <img data-src="http://qpic.cn/J2GAlkx6X" class="swiper-lazy">
-        <!-- Preloader image -->
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/AvFinIA5X" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/cgwMG5Irj" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/9wDaViHov" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/6fRqA12h3" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/9DvL6SeyY" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
+    <div id="gallery-top" class="swiper-wrapper">
+      <!-- 相册 -->
     </div>
-    <!-- Add Pagination -->
-    <!-- <div class="swiper-pagination swiper-pagination-white"></div> -->
     <!-- Navigation -->
     <div class="swiper-button-next swiper-button-white"></div>
     <div class="swiper-button-prev swiper-button-white"></div>
   </div>
   <div class="swiper-container gallery-thumbs">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        Required swiper-lazy class and image source specified in data-src attribute
-        <img data-src="http://qpic.cn/J2GAlkx6X" class="swiper-lazy">
-        Preloader image
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/AvFinIA5X" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/cgwMG5Irj" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/9wDaViHov" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/6fRqA12h3" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img data-src="http://qpic.cn/9DvL6SeyY" class="swiper-lazy">
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
+    <div id="gallery-thumbs" class="swiper-wrapper">
+      <!-- 缩略图 -->
     </div>
   </div>
 
@@ -180,6 +128,28 @@
     document.addEventListener("WeixinJSBridgeReady", function () {
       playSong();
     }, false);
+    //图片地址
+    var images = [
+    	    'http://qpic.cn/J2GAlkx6X',
+	    'http://qpic.cn/AvFinIA5X',
+	    'http://qpic.cn/cgwMG5Irj',
+	    'http://qpic.cn/9wDaViHov',
+	    'http://qpic.cn/6fRqA12h3',
+	    'http://qpic.cn/9DvL6SeyY'
+    	];
+    //创建相册DOM
+    function createGalleryDOM(){
+      var gallery = [];
+      for(var i = 0 ; i < images.length ; i++ ){
+        gallery.push('<div class="swiper-slide">');
+	gallery.push('  <img data-src="'+images[i]+'" class="swiper-lazy">');
+	gallery.push('  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>');
+	gallery.push('</div>');
+      }
+      var photosHTML = gallery.join("");
+      document.getElementById("gallery-top").innerHTML = photosHTML;
+      document.getElementById("gallery-thumbs").innerHTML = photosHTML;
+    }
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
       var heart = new Image();
@@ -195,6 +165,8 @@
 	  	  that.destroy();
 	        }
       	  });
+	  //创建相册DOM元素
+	  createGalleryDOM();
 	  //缩略图
 	  var thumbs = new Swiper('.gallery-thumbs', {
 		   spaceBetween: 10,
