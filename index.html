@@ -182,6 +182,7 @@
       var heart = new Image();
       //等待背景加载完成
       heart.onload = function(){
+	  playSong();
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
 	  var typed = new Typed('#typed', {
         	strings: ['田奇 ❤ 李谊成\n❤^800❤^800❤^800❤^800❤^800❤^800❤'],
