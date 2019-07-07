@@ -70,7 +70,6 @@
       position:fixed;
       background-size: cover;
       background-position: center;
-      /*background-image:url(./images/heart.jpg);*/
       z-index:2019;
     }
     #typed{
@@ -89,7 +88,7 @@
   <div id="typed-wrap">
     <span id="typed"></span>
   </div>
-  <audio id="song" src="./audio/marry.mp3" loop="true"></audio>
+  <audio id="song" src="http://fs.open.kugou.com/fcd19118cbbbddbfbe0eb7aac19cb8ba/5d214ba6/G073/M04/1F/01/KZQEAFgCHL6ALhP-ACyN4hcVAyw737.mp3" loop="true"></audio>
   <!-- Swiper -->
   <div class="swiper-container gallery-top">
     <div class="swiper-wrapper">
@@ -123,17 +122,11 @@
     <!-- Add Pagination -->
     <!-- <div class="swiper-pagination swiper-pagination-white"></div> -->
     <!-- Navigation -->
-    <div class="swiper-button-next swiper-button-white"></div>
-    <div class="swiper-button-prev swiper-button-white"></div>
+    <!--<div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>-->
   </div>
   <div class="swiper-container gallery-thumbs">
     <div class="swiper-wrapper">
-      <!-- <div class="swiper-slide" style="background-image:url(images/anhui.jpg)"></div> -->
-      <!-- <div class="swiper-slide" style="background-image:url(images/jilin.jpg)"></div> -->
-      <!-- <div class="swiper-slide" style="background-image:url(images/hainan.jpg)"></div> -->
-      <!-- <div class="swiper-slide" style="background-image:url(images/zhejiang.jpg)"></div> -->
-      <!-- <div class="swiper-slide" style="background-image:url(images/shandong.jpg)"></div> -->
-      <!-- <div class="swiper-slide" style="background-image:url(images/guangdong.jpeg)"></div> -->
       <div class="swiper-slide">
         Required swiper-lazy class and image source specified in data-src attribute
         <img data-src="./images/anhui.jpg" class="swiper-lazy">
@@ -171,7 +164,7 @@
   <!-- Initialize Swiper -->
   <script>
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
-    //document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
       var heart = new Image();
       //等待背景加载完成
       heart.onload = function(){
@@ -212,17 +205,17 @@
 		 spaceBetween: 10,
 		 loop:true,
 		 loopedSlides: 5, //looped slides should be the same
-		 navigation: {
+		 /*navigation: {
 		   nextEl: '.swiper-button-next',
 		   prevEl: '.swiper-button-prev',
-		 },
+		 },*/
 		 thumbs: {
 		   swiper: thumbs,
 		 }
 	  });
       }
       heart.src = "./images/heart.jpg";
-    //});
+    });
     
   </script>
 </body>
