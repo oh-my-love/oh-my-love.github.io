@@ -163,17 +163,26 @@
   <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.ui.min.js"></script>
   <!-- Initialize Swiper -->
   <script>
+    var played = false;
+    function playSong(){
+    	if(!played){
+	  played = true;
+	  var song = document.getElementById('song');
+	  song.play();
+	}
+    }
+    document.addEventListener("touchstart", function(){
+      playSong();
+    }, true);
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      playSong();
+    }, false);
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
       var heart = new Image();
       //等待背景加载完成
       heart.onload = function(){
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
-	  var song = document.getElementById('song');
-	  song.play();
-	  document.addEventListener("WeixinJSBridgeReady", function () {
-            song.play();
-          }, false);
 	  var typed = new Typed('#typed', {
         	strings: ['田奇 ❤ 李谊成\n❤^800❤^800❤^800❤^800❤^800❤^800❤'],
 		typeSpeed:150,
