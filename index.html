@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <!-- Link Swiper's CSS -->
   <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
-
-  <!-- Demo styles -->
-  <style>
+  <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.min.js"></script>
+  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.ui.min.js"></script>
+  <style type="text/css">
     html, body {
       position: relative;
       height: 100%;
@@ -82,35 +84,8 @@
       left:9%;
     }
   </style>
-</head>
-<body>
-  <!-- welcome -->
-  <div id="typed-wrap">
-    <span id="typed"></span>
-  </div>
-  <audio id="song" preload="auto" src="http://t.cn/AiOlITgl" loop="true"></audio>
-  <!-- Swiper -->
-  <div class="swiper-container gallery-top">
-    <div id="gallery-top" class="swiper-wrapper">
-      <!-- 相册 -->
-    </div>
-    <!-- Navigation -->
-    <div class="swiper-button-next swiper-button-white"></div>
-    <div class="swiper-button-prev swiper-button-white"></div>
-  </div>
-  <div class="swiper-container gallery-thumbs">
-    <div id="gallery-thumbs" class="swiper-wrapper">
-      <!-- 缩略图 -->
-    </div>
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
-  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
-  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.min.js"></script>
-  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.ui.min.js"></script>
-  <!-- Initialize Swiper -->
-  <script>
+	
+  <script type="text/javascript">
     var played = false;
     function playSong(){
     	if(!played){
@@ -202,5 +177,27 @@
     });
     
   </script>
+</head>
+<body>
+  <!-- welcome -->
+  <div id="typed-wrap">
+    <span id="typed"></span>
+  </div>
+  <audio id="song" preload="auto" src="http://fs.open.kugou.com/c4f462bb7f4c1293a98c123b4f851eb1/5d284200/G002/M0A/1B/13/Qg0DAFUHB0OAU3HgADtZd94R9TU518.mp3" loop="true"></audio>
+  <!-- Swiper -->
+  <div class="swiper-container gallery-top">
+    <div id="gallery-top" class="swiper-wrapper">
+      <!-- 相册 -->
+    </div>
+    <!-- Navigation -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div id="gallery-thumbs" class="swiper-wrapper">
+      <!-- 缩略图 -->
+    </div>
+  </div>
+
 </body>
 </html>
