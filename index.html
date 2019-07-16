@@ -54,18 +54,7 @@
       height: 100%;
       width: 100%;
     }
-    .gallery-thumbs {
-      height: 15%;
-      box-sizing: border-box;
-      padding: 10px 0;
-    }
-    .gallery-thumbs .swiper-slide {
-      height: 100%;
-      opacity: 0.4;
-    }
-    .gallery-thumbs .swiper-slide-thumb-active {
-      opacity: 1;
-    }
+
     #typed-wrap{
       height:100%;
       width:100%;
@@ -154,7 +143,6 @@
       }
       var photosHTML = gallery.join("");
       document.getElementById("gallery-top").innerHTML = photosHTML;
-      //document.getElementById("gallery-thumbs").innerHTML = photosHTML;
     }
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
@@ -167,23 +155,12 @@
 		typeSpeed:150,
 		startDelay:200,
 		onComplete:function(that){
-	  	  Velocity(document.getElementById("typed-wrap"),"zoomOut");
+	  	  Velocity(document.getElementById("typed-wrap"), "zoomOut");
 	  	  that.destroy();
 	        }
       	  });
 	  //创建相册DOM元素
 	  createGalleryDOM();
-	  //缩略图
-	  /*var thumbs = new Swiper('.gallery-thumbs', {
-		   spaceBetween: 10,
-		   slidesPerView: 4,
-		   loop: true,
-		   freeMode: true,
-		   loopedSlides: 5, //looped slides should be the same
-		   watchSlidesVisibility: true,
-		   watchSlidesProgress: true,
-		   lazy: true,
-		});*/
 	  //大图
 	  var swiper = new Swiper('.gallery-top', {
 		 // Enable lazy loading
@@ -191,10 +168,8 @@
 		 pagination: {
 		   el: '.swiper-pagination',
 		   clickable: true,
-		  },
-		 spaceBetween: 10,
+		 },
 		 loop:true,
-		 loopedSlides: 5, //looped slides should be the same
 		 navigation: {
 		   nextEl: '.swiper-button-next',
 		   prevEl: '.swiper-button-prev',
@@ -207,27 +182,15 @@
   </script>
 </head>
 <body>
-  <!-- welcome -->
   <div id="typed-wrap">
     <span id="typed"></span>
   </div>
   <audio id="song" preload="auto" src="https://always-love-you.gitee.io/wephotos/burning.mp3" loop="true"></audio>
-  <!-- Swiper -->
   <div class="swiper-container gallery-top">
-    <div id="gallery-top" class="swiper-wrapper">
-      <!-- 相册 -->
-    </div>
+    <div id="gallery-top" class="swiper-wrapper"></div>
     <div class="swiper-pagination swiper-pagination-white"></div>
-    <!-- Navigation -->
     <div class="swiper-button-next swiper-button-white"></div>
     <div class="swiper-button-prev swiper-button-white"></div>
   </div>
-  
-  <!--<div class="swiper-container gallery-thumbs">
-    <div id="gallery-thumbs" class="swiper-wrapper">
-      
-    </div>
-  </div> -->
-
 </body>
 </html>
