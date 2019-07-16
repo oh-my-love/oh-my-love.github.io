@@ -86,6 +86,45 @@
   </style>
 	
   <script type="text/javascript">
+    //图片地址
+    var images = [
+    	    'http://qpic.cn/z0yLgbDRO',
+	    'http://qpic.cn/zx2IhNbPZ',
+	    'http://qpic.cn/S4NoXHFmb',
+	    'http://qpic.cn/OqYZixPP6',
+	    'http://qpic.cn/HfceZrewS',
+	    'http://qpic.cn/seEDVOBSv',
+	    'http://qpic.cn/1x4vHh1Dq',
+	    'http://qpic.cn/OldbwytRD',
+	    'http://qpic.cn/733DXjeMD',
+	    'http://qpic.cn/e7WJBzN3M',
+	    'http://qpic.cn/i8Z5nCrTv',
+	    'http://qpic.cn/fxi5TlW5I',
+	    'http://qpic.cn/D48SqnXn4',
+	    'http://qpic.cn/w4rt85kiW',
+	    'http://qpic.cn/UyWj06OGX',
+	    'http://qpic.cn/UBIpzQqAf',
+	    'http://qpic.cn/UhnomEckQ',
+	    'http://qpic.cn/rl6jYgGmu',
+	    'http://qpic.cn/935BE4yhN',
+	    'http://qpic.cn/ZDLANyNrW',
+	    'http://qpic.cn/aguHFG7J1',
+	    'http://qpic.cn/MyOUTwAip',
+	    'http://qpic.cn/GC3kNYlVN',
+	    'http://qpic.cn/EhXeI2SU3',
+	    'http://qpic.cn/c2ZK6trq1',
+	    'http://qpic.cn/BfW5Xt23d',
+	    'http://qpic.cn/v8mbUicoT',
+	    'http://qpic.cn/0v5kTBuIm',
+	    'http://qpic.cn/PncYHprSr',
+	    'http://qpic.cn/p7herHoHh',
+	    'http://qpic.cn/w6pb3qA71',
+	    'http://qpic.cn/cye6ULcJp',
+	    'http://qpic.cn/WvbyZTSx9',
+	    'http://qpic.cn/ehxvrFbjh',
+	    'http://qpic.cn/WdtgKRjU4',
+	    'http://qpic.cn/W8NH6dZ9e'
+    	];
     var played = false;
     function playSong(){
     	if(!played){
@@ -103,15 +142,7 @@
     document.addEventListener("WeixinJSBridgeReady", function () {
       playSong();
     }, false);
-    //图片地址
-    var images = [
-    	    'http://qpic.cn/J2GAlkx6X',
-	    'http://qpic.cn/AvFinIA5X',
-	    'http://qpic.cn/cgwMG5Irj',
-	    'http://qpic.cn/9wDaViHov',
-	    'http://qpic.cn/6fRqA12h3',
-	    'http://qpic.cn/9DvL6SeyY'
-    	];
+    
     //创建相册DOM
     function createGalleryDOM(){
       var gallery = [];
