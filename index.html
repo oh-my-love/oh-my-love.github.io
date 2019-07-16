@@ -51,7 +51,7 @@
       top: 50%;
     }
     .gallery-top {
-      height: 85%;
+      height: 100%;
       width: 100%;
     }
     .gallery-thumbs {
@@ -154,7 +154,7 @@
       }
       var photosHTML = gallery.join("");
       document.getElementById("gallery-top").innerHTML = photosHTML;
-      document.getElementById("gallery-thumbs").innerHTML = photosHTML;
+      //document.getElementById("gallery-thumbs").innerHTML = photosHTML;
     }
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
@@ -163,7 +163,7 @@
       heart.onload = function(){
           document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
 	  var typed = new Typed('#typed', {
-        	strings: ['<i>I <b>love</b> you not because of who you </i>\n<i>are, ^500but because of who I am when</i> \n<i>I am with <b>you</b></i>\n\n\t\t\tMr.Tian^500💘^500💘Ms.Li^2019'],
+        	strings: ['<i>I <b>love</b> you not because of who you </i>\n<i>are, ^500but because of who I am when</i> \n<i>I am with <b>you</b></i>\n\n\t\t\t<i><b>Mr.Tian</b></i>^500💘^500💘<i><b>Ms.Li</b></i>^2019'],
 		typeSpeed:150,
 		startDelay:200,
 		onComplete:function(that){
@@ -174,7 +174,7 @@
 	  //创建相册DOM元素
 	  createGalleryDOM();
 	  //缩略图
-	  var thumbs = new Swiper('.gallery-thumbs', {
+	  /*var thumbs = new Swiper('.gallery-thumbs', {
 		   spaceBetween: 10,
 		   slidesPerView: 4,
 		   loop: true,
@@ -183,24 +183,21 @@
 		   watchSlidesVisibility: true,
 		   watchSlidesProgress: true,
 		   lazy: true,
-		});
+		});*/
 	  //大图
 	  var swiper = new Swiper('.gallery-top', {
 		 // Enable lazy loading
 		 lazy: true,
-		 <!-- pagination: { -->
-		 <!-- el: '.swiper-pagination', -->
-		 <!-- clickable: true, -->
-		 <!-- }, -->
+		 pagination: {
+		   el: '.swiper-pagination',
+		   clickable: true,
+		  },
 		 spaceBetween: 10,
 		 loop:true,
 		 loopedSlides: 5, //looped slides should be the same
 		 navigation: {
 		   nextEl: '.swiper-button-next',
 		   prevEl: '.swiper-button-prev',
-		 },
-		 thumbs: {
-		   swiper: thumbs,
 		 }
 	  });
       }
@@ -220,15 +217,17 @@
     <div id="gallery-top" class="swiper-wrapper">
       <!-- 相册 -->
     </div>
+    <div class="swiper-pagination swiper-pagination-white"></div>
     <!-- Navigation -->
     <div class="swiper-button-next swiper-button-white"></div>
     <div class="swiper-button-prev swiper-button-white"></div>
   </div>
-  <div class="swiper-container gallery-thumbs">
+  
+  <!--<div class="swiper-container gallery-thumbs">
     <div id="gallery-thumbs" class="swiper-wrapper">
-      <!-- 缩略图 -->
+      
     </div>
-  </div>
+  </div> -->
 
 </body>
 </html>
