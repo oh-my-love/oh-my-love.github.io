@@ -7,9 +7,6 @@
   <!-- Link Swiper's CSS -->
   <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
-  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
-  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.min.js"></script>
-  <script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.ui.min.js"></script>
   <style type="text/css">
     html, body {
       position: relative;
@@ -52,24 +49,6 @@
     .gallery-top {
       height: 100%;
       width: 100%;
-    }
-
-    #typed-wrap{
-      height:100%;
-      width:100%;
-      position:fixed;
-      background-size: cover;
-      background-position: center;
-      z-index:2019;
-    }
-    #typed{
-      white-space: pre;
-      line-height: 50px;
-      color:red;
-      font-size:20px;
-      position:absolute;
-      top:40%;
-      left:9%;
     }
     .swiper-pagination-bullet{
        background: #fff;
@@ -180,36 +159,18 @@
     document.addEventListener("WeixinJSBridgeReady", function () {
       playSong();
     }, false);
-    
-    //创建相册DOM
-    function createGalleryDOM(){
-      var gallery = [];
-      for(var i = 0 ; i < images.length ; i++ ){
-        gallery.push('<div class="swiper-slide">');
-	gallery.push('  <img data-src="'+images[i]+'" class="swiper-lazy">');
-	gallery.push('  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>');
-	gallery.push('</div>');
-      }
-      var photosHTML = gallery.join("");
-      document.getElementById("gallery-top").innerHTML = photosHTML;
-    }
+
     //--创建页面监听，等待微信端页面加载完毕 触发音频播放
     document.addEventListener('DOMContentLoaded', function () {
-      var heart = new Image();
-      //等待背景加载完成
-      heart.onload = function(){
-          document.getElementById("typed-wrap").style.backgroundImage = "url("+heart.src+")";
-	  var typed = new Typed('#typed', {
-        	strings: ['<i>I <b>love</b> you not because of who you </i>\n<i>are, but because of who I am when</i> \n<i>I am with <b>you</b></i>\n\n\t\t\t<i><b>Mr.Tian</b></i>💘💘<i><b>Ms.Li</b></i>^200'],
-		typeSpeed:50,
-		startDelay:10,
-		onComplete:function(that){
-	  	  Velocity(document.getElementById("typed-wrap"), "zoomOut");
-	  	  that.destroy();
-	        }
-      	  });
 	  //创建相册DOM元素
-	  createGalleryDOM();
+	  var gallery = [];
+          for(var i = 0 ; i < images.length ; i++ ){
+              gallery.push('<div class="swiper-slide">');
+	      gallery.push('  <img data-src="'+images[i]+'" class="swiper-lazy">');
+	      gallery.push('  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>');
+	      gallery.push('</div>');
+          }
+          document.getElementById("gallery-top").innerHTML = gallery.join("");
 	  //大图
 	  var swiper = new Swiper('.gallery-top', {
 		 // Enable lazy loading
@@ -225,16 +186,11 @@
 		   prevEl: '.swiper-button-prev',
 		 }
 	  });
-      }
-      heart.src = "http://qpic.cn/yzzsdIGAf";
     });
     
   </script>
 </head>
 <body>
-  <div id="typed-wrap">
-    <span id="typed"></span>
-  </div>
   <audio id="song" preload="auto" src="https://always-love-you.gitee.io/wephotos/burning.mp3" loop="true"></audio>
   <div class="swiper-container gallery-top">
     <div id="gallery-top" class="swiper-wrapper"></div>
