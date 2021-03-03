@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>田奇 💘💘 李谊成</title>
+  <title>💘💘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <!-- Link Swiper's CSS -->
-  <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
   <style type="text/css">
     html, body {
       position: relative;
@@ -21,182 +18,13 @@
       margin: 0;
       padding: 0;
     }
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background-size: cover;
-      background-position: center;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
-      -ms-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-    }
-    .gallery-top {
-      height: 100%;
-      width: 100%;
-    }
-    .swiper-pagination-bullet{
-       background: #fff;
-     }
   </style>
 	
   <script type="text/javascript">
-    //图片地址
-    var images = [
-    	    'http://qpic.cn/c9S1kfm7v',
-		'http://qpic.cn/T7LtZMXLc',
-		'http://qpic.cn/z0yLgbDRO',
-		'http://qpic.cn/pBdEtj2SM',
-		'http://qpic.cn/E5815EAfC',
-		'http://qpic.cn/yiGGHt4ij',
-		'http://qpic.cn/zx2IhNbPZ',
-		'http://qpic.cn/S4NoXHFmb',
-		'http://qpic.cn/DhWqntxLu',
-		'http://qpic.cn/OqYZixPP6',
-		'http://qpic.cn/om2GEc2Ya',
-		'http://qpic.cn/SDEf0MxtV',
-		'http://qpic.cn/ueGTYFi63',
-		'http://qpic.cn/HfceZrewS',
-		'http://qpic.cn/RkhTHV6HJ',
-		'http://qpic.cn/hsp4tgEc4',
-		'http://qpic.cn/seEDVOBSv',
-		'http://qpic.cn/1x4vHh1Dq',
-		'http://qpic.cn/PncoDVz8y',
-		'http://qpic.cn/M8DLS3eBS',
-		'http://qpic.cn/w4rkJMiSF',
-		'http://qpic.cn/OldbwytRD',
-		'http://qpic.cn/Ssaawiup9',
-		'http://qpic.cn/cwgG9eDHK',
-		'http://qpic.cn/ig2uy968R',
-		'http://qpic.cn/733DXjeMD',
-		'http://qpic.cn/5fQUbZoWV',
-		'http://qpic.cn/e7WJBzN3M',
-		'http://qpic.cn/gERoSC2uq',
-		'http://qpic.cn/1AqJqfCGi',
-		'http://qpic.cn/t8kw1CVTa',
-		'http://qpic.cn/5x8kWICOs',
-		'http://qpic.cn/i8Z5nCrTv',
-		'http://qpic.cn/HqRh2UQ4b',
-		'http://qpic.cn/fxi5TlW5I',
-		'http://qpic.cn/jpuOcFzIo',
-		'http://qpic.cn/D48SqnXn4',
-		'http://qpic.cn/svxwlpkf5',
-		'http://qpic.cn/NkdIRllO5',
-		'http://qpic.cn/w4rt85kiW',
-		'http://qpic.cn/qzrfzwhcT',
-		'http://qpic.cn/8uEbMZe3v',
-		'http://qpic.cn/K8B8Yjn19',
-		'http://qpic.cn/UyWj06OGX',
-		'http://qpic.cn/UBIpzQqAf',
-		'http://qpic.cn/qeCc6W1DI',
-		'http://qpic.cn/rDdF3uNPs',
-		'http://qpic.cn/UhnomEckQ',
-		'http://qpic.cn/axdd7vgGY',
-		'http://qpic.cn/li35IW4ZD',
-		'http://qpic.cn/68xxt0c6L',
-		'http://qpic.cn/jh2N5QEuu',
-		'http://qpic.cn/rl6jYgGmu',
-		'http://qpic.cn/935BE4yhN',
-		'http://qpic.cn/fnsccJoNI',
-		'http://qpic.cn/sq2RmMGZR',
-		'http://qpic.cn/ZDLANyNrW',
-		'http://qpic.cn/14woFys8X',
-		'http://qpic.cn/zhIypdRUh',
-		'http://qpic.cn/760jUraCa',
-		'http://qpic.cn/8sGtXPXyx',
-		'http://qpic.cn/aguHFG7J1',
-		'http://qpic.cn/MyOUTwAip',
-		'http://qpic.cn/GC3kNYlVN',
-		'http://qpic.cn/EhXeI2SU3',
-		'http://qpic.cn/c2ZK6trq1',
-		'http://qpic.cn/MBAr0RmAo',
-		'http://qpic.cn/BfW5Xt23d',
-		'http://qpic.cn/v8mbUicoT',
-		'http://qpic.cn/0v5kTBuIm',
-		'http://qpic.cn/PncYHprSr',
-		'http://qpic.cn/p7herHoHh',
-		'http://qpic.cn/XudNPF6Oo',
-		'http://qpic.cn/w6pb3qA71',
-		'http://qpic.cn/cye6ULcJp',
-		'http://qpic.cn/e7WoL90xR',
-		'http://qpic.cn/WvbyZTSx9',
-		'http://qpic.cn/ehxvrFbjh',
-		'http://qpic.cn/d8Ugm8ZKU',
-		'http://qpic.cn/WdtgKRjU4',
-		'http://qpic.cn/ODAffPVJA',
-		'http://qpic.cn/LrUy4xVaJ',
-		'http://qpic.cn/W8NH6dZ9e'
-    	];
-    var played = false;
-    function playSong(){
-    	if(!played){
-	  try{
-	    document.getElementById('song').play();
-	    played = true;
-	  }catch(e){
-	    console.log(e);
-	  }
-	}
-    }
-    document.addEventListener("touchstart", function(){
-      playSong();
-    }, true);
-    document.addEventListener("WeixinJSBridgeReady", function () {
-      playSong();
-    }, false);
-
-    //--创建页面监听，等待微信端页面加载完毕 触发音频播放
-    document.addEventListener('DOMContentLoaded', function () {
-	  //创建相册DOM元素
-	  var gallery = [];
-          for(var i = 0 ; i < images.length ; i++ ){
-              gallery.push('<div class="swiper-slide">');
-	      gallery.push('  <img data-src="'+images[i]+'" class="swiper-lazy">');
-	      gallery.push('  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>');
-	      gallery.push('</div>');
-          }
-          document.getElementById("gallery-top").innerHTML = gallery.join("");
-	  //大图
-	  var swiper = new Swiper('.gallery-top', {
-		 // Enable lazy loading
-		 lazy: true,
-		 pagination: {
-		   el: '.swiper-pagination',
-	           dynamicBullets:true,
-		   clickable: true,
-		 },
-		 loop:true,
-		 navigation: {
-		   nextEl: '.swiper-button-next',
-		   prevEl: '.swiper-button-prev',
-		 }
-	  });
-    });
     
   </script>
 </head>
 <body>
-  <audio id="song" preload="auto" src="https://always-love-you.gitee.io/wephotos/burning.mp3" loop="true"></audio>
-  <div class="swiper-container gallery-top">
-    <div id="gallery-top" class="swiper-wrapper"></div>
-    <div class="swiper-pagination swiper-pagination-white"></div>
-    <div class="swiper-button-next swiper-button-white"></div>
-    <div class="swiper-button-prev swiper-button-white"></div>
-  </div>
+  Welcome
 </body>
 </html>
